@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using NUnit.Framework;
+using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,7 +9,7 @@ namespace April2021.Page
 {
     class TMPage
     {
-        public void createTM(IWebDriver driver)
+        public void CreateTM(IWebDriver driver)
         {
             //***create new TM test
 
@@ -67,13 +68,22 @@ namespace April2021.Page
 
 
             IWebElement actualdescription = driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[last()]/td[3]"));
+
+            //option 1
+            Assert.That(actualdescription.Text, Is.EqualTo("spain15"),"test failed");
+
+
+            //option 2
+
             if (actualdescription.Text == "spain15")
             {
-                Console.WriteLine("TM created,test passed");
+                //Console.WriteLine("TM created,test passed");
+                Assert.Pass("TM created,test passed");
             }
             else
             {
-                Console.WriteLine("TM failed to create");
+                //Console.WriteLine("TM failed to create");
+                Assert.Fail("TM failed,test failed");
             }
 
 
@@ -83,7 +93,7 @@ namespace April2021.Page
 
      
 
-        public void editTM(IWebDriver driver)
+        public void EditTM(IWebDriver driver)
         {
             //verify whether user is able to edit the record
 
@@ -115,7 +125,7 @@ namespace April2021.Page
             Thread.Sleep(3500);
         }
 
-        public void deleteTM(IWebDriver driver)
+        public void DeleteTM(IWebDriver driver)
         {
             //verify user is able to delete the record
             //  Delete the record name "spain 15 "from the list

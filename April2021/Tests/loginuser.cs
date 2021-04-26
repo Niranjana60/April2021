@@ -1,43 +1,73 @@
 ﻿using April2021.Page;
+using April2021.Utilities;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System;
 using System.Threading;
 
 namespace April2021
-{
-    class loginuser
+{     
+    [TestFixture]
+    [Parallelizable]
+    class Loginuser:CommonDriver
     {
-        static void Main(string[] args)
+
+        //static void Main(string[] args) 
+        //{
+        //}
+
+
+
+
+        [Test]
+        public void CreateTMTest()
         {
-
-
-            Console.WriteLine("helloworld");
-            // launch turnup portal
-
-            IWebDriver driver = new ChromeDriver();
-
-            //page objects for login
-            Loginpage loginobj = new Loginpage();
-            loginobj.loginsteps(driver);
 
             //page objects for homepage
             Homepage homeobj = new Homepage();
-            homeobj.navigateToTM(driver);
+            homeobj.NavigateToTM(driver);
 
             //page objects for TMPage
             TMPage tmobj = new TMPage();
-            tmobj.createTM(driver);
-            tmobj.editTM(driver);
-            tmobj.deleteTM(driver);
+            tmobj.CreateTM(driver);
 
-            //close driver
-            driver.Close();
 
 
 
         }
+
+        [Test]
+        public void EditTMTest()
+        {
+            //page objects for homepage
+            Homepage homeobj = new Homepage();
+            homeobj.NavigateToTM(driver);
+
+            //page objects for TMPage
+            TMPage tmobj = new TMPage();
+            tmobj.CreateTM(driver);
+            tmobj.EditTM(driver);
+            
+
+        }
+
+        [Test]
+        public void DeleteTMTest()
+        {
+            //page objects for homepage
+            Homepage homeobj = new Homepage();
+            homeobj.NavigateToTM(driver);
+
+            //page objects for TMPage
+            TMPage tmobj = new TMPage();
+            tmobj.DeleteTM(driver);
+
+
+        }
+        
     }
+
 }
 
 

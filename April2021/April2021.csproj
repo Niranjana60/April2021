@@ -6,19 +6,21 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="E:\visual studio programs\Loginuser.cs" Link="Tests\Loginuser.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <PackageReference Include="DotNetSeleniumExtras.WaitHelpers" Version="3.11.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.9.4" />
     <PackageReference Include="Microsoft.NETCore.App" Version="2.2.8" />
+    <PackageReference Include="NUnit" Version="3.13.1" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.17.0" />
     <PackageReference Include="Selenium.Support" Version="3.141.0" />
     <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
     <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="89.0.4389.2300" />
+    <PackageReference Include="SpecFlow.NUnit" Version="3.7.38" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Utilities\" />
-    <Folder Include="Tests\" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <HintPath>C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\LiveShare\Agent\System.Data.DataSetExtensions.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

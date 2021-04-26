@@ -8,9 +8,12 @@ namespace April2021.Page
 {
     class Homepage
     {
-        public void navigateToTM(IWebDriver driver)
+        public void NavigateToTM(IWebDriver driver)
         {
             //click admin
+
+
+
             IWebElement Adminstration = driver.FindElement(By.XPath("html/body/div[3]/div/div/ul/li[5]/a"));
             Adminstration.Click();
 
@@ -20,6 +23,14 @@ namespace April2021.Page
             IWebElement Timeandmaterials = driver.FindElement(By.XPath("html/body/div[3]/div/div/ul/li[5]/ul/li[3]/a"));
             Timeandmaterials.Click();
 
+        }
+        public void NavigateToCompanies(IWebDriver driver)
+        {
+            //click admin
+            IWebElement Adminstration = driver.FindElement(By.XPath("html/body/div[3]/div/div/ul/li[5]/a"));
+            Adminstration.Click();
+
+            //click companies-to do
         }
     }
 }
